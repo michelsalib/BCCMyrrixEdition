@@ -35,13 +35,13 @@ Then install the dependencies:
 You then need to setup your database (you can change any default configuration
 in the app/config/parameters.yml file):
 
-   php app/console doctrine:database:create
-   php app/console doctrine:schema:create
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
 
 Then you have to load all the data of the MovieLens dataset into your database
 and into the myrrix recommender engine:
 
-   php app/console --env=prod acme:demo:load-data-set
+    php app/console --env=prod acme:demo:load-data-set
 
 This will take a very long time, it will output a message every 1000 inserted
 rows, there are 1 000 000 items to load.
