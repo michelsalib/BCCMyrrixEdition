@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap.min.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/bootstrap.min.js') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">Myrrix Demo</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="{{ path('acme_demo_demo_index') }}">Home</a></li>
+                        <li><a href="{{ path('acme_demo_demo_movies') }}">Movies</a></li>
+                        <li><a href="{{ path('acme_demo_demo_users') }}">Users</a></li>
+                        <li><a href="{{ path('acme_demo_demo_recommend') }}">Recommender</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 50px;">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>List of movies</h1>
+
+    {% for movie in movies %}
+        <div class="row">
+            <span class="span3"><a href="{{ path('acme_demo_demo_movie', {'id': movie.id}) }}">{{ movie.title }}</a></span>
+            <span class="span3">{{ movie.genres|join(',') }}</span>
+        </div>
+    {% endfor %}
+{% endblock %}

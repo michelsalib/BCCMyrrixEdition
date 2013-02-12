@@ -1,0 +1,11 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>List of users</h1>
+
+    {% for user in users %}
+        <div class="row">
+            <span class="span3"><a href="{{ path('acme_demo_demo_user', {'id': user.userId}) }}">{{ user.userId }}</a></span>
+        </div>
+    {% endfor %}
+{% endblock %}

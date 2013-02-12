@@ -1,0 +1,3 @@
+_demo:
+    resource: "@AcmeDemoBundle/Controller"
+    type:     annotation

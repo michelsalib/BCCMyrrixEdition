@@ -1,0 +1,10 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Myrrix recommendation tester</h1>
+    <ul>
+        <li><a href="{{ path('acme_demo_demo_movies') }}">Movies</a></li>
+        <li><a href="{{ path('acme_demo_demo_users') }}">Users</a></li>
+        <li><a href="{{ path('acme_demo_demo_recommend') }}">Recommender</a></li>
+    </ul>
+{% endblock %}

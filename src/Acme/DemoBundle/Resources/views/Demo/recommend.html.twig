@@ -1,0 +1,45 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% form_theme form _self %}
+
+{% block _recommender_movies_entry_row %}
+    <div class="row">
+        <div class="span9">
+            {{ form_label(form) }}
+        </div>
+        <div class="span3">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block _recommender_movies_entry_label %}
+    <strong>{{ form.attr.movie.title }}</strong>&nbsp;<em>{{ form.attr.movie.genres|join(', ') }}</em>
+{% endblock %}
+
+{% block content %}
+    <h1>Recommender</h1>
+
+    <h2>My current movies</h2>
+    <div class="row">
+        {% for movie in currentRatedMovies %}
+            <span class="span">
+                {{ movie.title }} <em>({{ currentRates[movie.id] }}/10)</em>
+            </span>
+        {% else %}
+            <span class="span">
+                none
+            </span>
+        {% endfor %}
+    </div>
+
+    <h2>Recommendations</h2>
+    <form action="#" method="POST">
+        {{ form_widget(form.movies) }}
+        {{ form_rest(form) }}
+
+        <a href="{{ path('acme_demo_demo_reset') }}" class="btn btn-danger">Reset</a>
+        <a href="{{ path('acme_demo_demo_more') }}" class="btn">More</a>
+        <input type="submit" class="btn btn-success"/>
+    </form>
+{% endblock %}
