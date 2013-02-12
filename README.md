@@ -18,7 +18,7 @@ runs an example of recommender engine based on the MovieLens dataset.
 
 You first need to have composer installed:
 
-   curl -s http://getcomposer.org/installer | php
+    curl -s http://getcomposer.org/installer | php
 
 First get the code. You can download it or get it via composer:
 
