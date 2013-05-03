@@ -26,7 +26,7 @@ First get the code. You can download it or get it via composer:
 
 Start myrrix using this command line:
 
-    java -jar myrrix.jar --localInputDir app/cache/myrrix --port 84
+    java -Dmodel.features=18 -jar myrrix.jar --localInputDir app/cache/myrrix --port 84
 
 Then install the dependencies:
 
