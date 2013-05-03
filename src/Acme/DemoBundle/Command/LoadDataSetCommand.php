@@ -44,6 +44,10 @@ class LoadDataSetCommand extends ContainerAwareCommand
             $movie->setTitle($title);
             $movie->setGenres(explode('|',$genres));
 
+            foreach (explode('|',$genres) as $genre) {
+                $myrrix->setItemTag((int)$id, trim($genre), (int)1);
+            }
+
             $entityManager->persist($movie);
             if ((++$movieCounter)%1000 == 0) {
                 $output->writeln(sprintf('Loading %d movies...', $movieCounter));
